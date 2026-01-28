@@ -59,10 +59,14 @@ const App = () => {
 
                 <section>
                   <Title level={5} type="secondary">Employee Info</Title>
-                  <Form.Item label="Name" name="employeeName"><Input /></Form.Item>
                   <Row gutter={8}>
-                    <Col span={12}><Form.Item label="ID" name="employeeId"><Input /></Form.Item></Col>
-                    <Col span={12}><Form.Item label="Designation" name="designation"><Input /></Form.Item></Col>
+                    <Col span={12}><Form.Item label="Name" name="employeeName"><Input /></Form.Item></Col>
+                    <Col span={12}><Form.Item label="Bank A/C" name="bankAccount"><Input /></Form.Item></Col>
+                  </Row>
+                  <Row gutter={8}>
+                    <Col span={8}><Form.Item label="ID" name="employeeId"><Input /></Form.Item></Col>
+                    <Col span={8}><Form.Item label="Designation" name="designation"><Input /></Form.Item></Col>
+                    <Col span={8}><Form.Item label="PAN" name="pan"><Input /></Form.Item></Col>
                   </Row>
                 </section>
 

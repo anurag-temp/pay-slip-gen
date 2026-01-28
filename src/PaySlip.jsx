@@ -52,6 +52,7 @@ const PayslipPDF = ({ data }) => {
           <View style={styles.col}>
             <View style={styles.row}><Text style={styles.label}>Employee:</Text><Text style={styles.value}>{data.employeeName}</Text></View>
             <View style={styles.row}><Text style={styles.label}>Employee ID:</Text><Text style={styles.value}>{data.employeeId}</Text></View>
+            <View style={styles.row}><Text style={styles.label}>Designation:</Text><Text style={styles.value}>{data.designation}</Text></View>
           </View>
           <View style={styles.col}>
             <View style={styles.row}><Text style={styles.label}>Bank A/C:</Text><Text style={styles.value}>{data.bankAccount}</Text></View>
