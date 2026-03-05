@@ -1,10 +1,10 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
   page: { padding: 40, fontSize: 10, fontFamily: 'Helvetica', color: '#333' },
-  header: { borderBottom: 2, borderColor: '#1890ff', paddingBottom: 10, marginBottom: 20 },
-  companyName: { fontSize: 20, fontWeight: 'bold', color: '#1890ff' },
+  header: { borderBottom: 2, borderColor: '#000000', paddingBottom: 20, marginBottom: 20, textAlign: 'center' },
+  companyName: { fontSize: 20, fontWeight: 'bold' },
   address: { fontSize: 9, color: '#666', marginTop: 2 },
   title: { textAlign: 'center', backgroundColor: '#fafafa', padding: 8, marginVertical: 15, fontWeight: 'bold', fontSize: 12 },
 
@@ -19,9 +19,15 @@ const styles = StyleSheet.create({
   tableHeader: { backgroundColor: '#f5f5f5', fontWeight: 'bold' },
   td1: { width: '70%', paddingLeft: 10 },
   td2: { width: '30%', paddingRight: 10, textAlign: 'right' },
+  logo: { width: "50px", height: "50px", position: 'absolute', left: 0 },
 
   netPaySection: { marginTop: 20, padding: 12, backgroundColor: '#1890ff', color: '#fff', flexDirection: 'row', justifyContent: 'space-between' },
-  footer: { position: 'absolute', bottom: 30, left: 40, right: 40, textAlign: 'center', fontSize: 8, color: '#aaa', borderTop: '0.5pt solid #eee', paddingTop: 10 }
+  footer: { position: 'absolute', bottom: 30, left: 40, right: 40, textAlign: 'center', fontSize: 8, color: '#aaa', borderTop: '0.5pt solid #eee', paddingTop: 10 },
+  backgroundImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  }
 });
 
 const PayslipPDF = ({ data }) => {
@@ -42,6 +48,7 @@ const PayslipPDF = ({ data }) => {
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.header}>
+          <Image src={"/pay-slip-gen/logo.png"} style={styles.logo} />
           <Text style={styles.companyName}>{data.companyName || "Company Name"}</Text>
           <Text style={styles.address}>{data.companyAddress || "Full Address Details"}</Text>
         </View>
